@@ -5,7 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignUpActivity"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorTextIcons">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fill_in_your_details_here"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="13sp"
+        android:layout_above="@+id/linearLayout"
+        android:layout_centerHorizontal="true" />
+
 
     <LinearLayout
         android:orientation="vertical"
@@ -20,22 +30,8 @@
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:hint="Enter Email"
-            android:nextFocusDown="@+id/passwordEditText"
-            android:padding="10dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@android:color/black"
-            android:textColorHint="@color/colorDivider"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/emailEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
+            android:background="@drawable/border"
+            android:hint="@string/enter_email"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
@@ -47,69 +43,8 @@
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:nextFocusDown="@+id/passwordEditText"
-            android:padding="10dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@android:color/black"
-            android:textColorHint="@color/colorDivider"
-            android:textSize="20sp" />
-        <EditText
-            android:id="@+id/nameEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:hint="Name"
-            android:nextFocusDown="@+id/passwordEditText"
-            android:padding="10dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@android:color/black"
-            android:textColorHint="@color/colorDivider"
-            android:textSize="20sp" />
-        <EditText
-            android:id="@+id/nameEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:hint="Name"
-            android:nextFocusDown="@+id/passwordEditText"
-            android:padding="10dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@android:color/black"
-            android:textColorHint="@color/colorDivider"
-            android:textSize="20sp" />
-        <EditText
-            android:id="@+id/nameEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:hint="Name"
-            android:nextFocusDown="@+id/passwordEditText"
-            android:padding="10dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@android:color/black"
-            android:textColorHint="@color/colorDivider"
-            android:textSize="20sp" />
-        <EditText
-            android:id="@+id/nameEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:hint="Name"
-            android:nextFocusDown="@+id/passwordEditText"
-            android:padding="10dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@android:color/black"
-            android:textColorHint="@color/colorDivider"
-            android:textSize="20sp" />
-        <EditText
-            android:id="@+id/nameEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:hint="Name"
+            android:background="@drawable/border"
+            android:hint="@string/password"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
@@ -118,12 +53,11 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/confirmPasswordEditText"
+            android:id="@+id/retypePassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:hint="Confirm Password"
-            android:inputType="textPassword"
+            android:background="@drawable/border"
+            android:hint="@string/re_type_password"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
@@ -131,36 +65,90 @@
             android:textColorHint="@color/colorDivider"
             android:textSize="20sp" />
 
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:hint="@string/your_name"
+            android:nextFocusDown="@+id/passwordEditText"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/colorDivider"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/countryEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:hint="@string/country"
+            android:nextFocusDown="@+id/passwordEditText"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/colorDivider"
+            android:textSize="20sp" />
+        
+        <Spinner
+            android:id="@+id/userTypeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:hint="@string/user_type"
+            android:nextFocusDown="@+id/passwordEditText"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/colorDivider"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/phoneEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:hint="@string/phone_number_with_country_code"
+            android:nextFocusDown="@+id/passwordEditText"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/colorDivider"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/projectEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:hint="@string/project"
+            android:nextFocusDown="@+id/passwordEditText"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/colorDivider"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/createUserButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="Sign up"
+            android:text="@string/sign_up"
             android:layout_marginTop="15dp"
-            android:textColor="@color/colorTextIcons" />
+            android:textColor="@color/colorTextIcons"
+            android:layout_gravity="center"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textColor="@color/colorTextIcons"
+            android:textColor="@color/colorPrimaryText"
             android:textStyle="bold"
             android:textSize="15sp"
-            android:text="Already have an account? Log in here!"
+            android:text="@string/already_have_an_account_log_in_here"
             android:id="@+id/loginTextView"
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fill in your details here:"
-        android:textColor="@color/colorPrimaryLight"
-        android:textSize="13sp"
-        android:layout_above="@+id/linearLayout"
-        android:layout_centerHorizontal="true" />
-
 </RelativeLayout>
