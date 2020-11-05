@@ -23,6 +23,12 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter((adapter));
         spinner.setOnItemSelectedListener(this);
+
+        Spinner spinner2 = findViewById(R.id.countrySpinner);
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.country, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner2.setAdapter((adapter2));
+        spinner2.setOnItemSelectedListener(this);
     }
 
     @Override

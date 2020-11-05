@@ -77,15 +77,15 @@
             android:textColor="@android:color/black"
             android:textColorHint="@color/colorDivider"
             android:textSize="15sp" />
-        <EditText
-            android:id="@+id/countryEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/border"
-            android:hint="@string/country"
-            android:nextFocusDown="@+id/passwordEditText"
-            android:padding="10dp"
+
+        <Spinner
+            android:id="@+id/countrySpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="47dp"
             android:layout_marginBottom="10dp"
+            android:background="@drawable/border"
+            android:hint="Country"
+            android:padding="10dip"
             android:textColor="@android:color/black"
             android:textColorHint="@color/colorDivider"
             android:textSize="15sp" />
