@@ -37,7 +37,7 @@
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
             android:textColorHint="@color/colorDivider"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/passwordEditText"
@@ -50,7 +50,7 @@
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
             android:textColorHint="@color/colorDivider"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/retypePassword"
@@ -63,7 +63,7 @@
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
             android:textColorHint="@color/colorDivider"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/nameEditText"
@@ -76,7 +76,7 @@
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
             android:textColorHint="@color/colorDivider"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
         <EditText
             android:id="@+id/countryEditText"
             android:layout_width="match_parent"
@@ -88,7 +88,7 @@
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
             android:textColorHint="@color/colorDivider"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
         
         <Spinner
             android:id="@+id/userTypeSpinner"
@@ -100,7 +100,7 @@
             android:padding="10dip"
             android:textColor="@android:color/black"
             android:textColorHint="@color/colorDivider"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/phoneEditText"
@@ -113,7 +113,7 @@
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
             android:textColorHint="@color/colorDivider"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/projectEditText"
@@ -126,15 +126,13 @@
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
             android:textColorHint="@color/colorDivider"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/createUserButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:text="@string/sign_up"
-            android:layout_marginTop="15dp"
             android:textColor="@color/colorTextIcons"
             android:layout_gravity="center"/>
 
@@ -144,7 +142,7 @@
             android:layout_marginTop="20dp"
             android:textColor="@color/colorPrimaryText"
             android:textStyle="bold"
-            android:textSize="15sp"
+            android:textSize="13sp"
             android:text="@string/already_have_an_account_log_in_here"
             android:id="@+id/loginTextView"
             android:layout_gravity="center_horizontal" />
