@@ -1,18 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/colorTextIcons">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingTop="30dp"
+        android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <RelativeLayout
+            android:id="@+id/relativeChicken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="20dp">
+
+            <ImageView
+                android:id="@+id/chicken"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_orpington_chicken" />
+
+            <TextView
+                android:id="@+id/chickenText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/chicken"
+                android:paddingTop="10dp"
+                android:text="@string/chicken"
+                android:layout_centerHorizontal="true"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryText" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeFish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="20dp">
+
+        <ImageView
+            android:id="@+id/fish"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_fish" />
+
+        <TextView
+            android:id="@+id/fishText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fish"
+            android:paddingTop="10dp"
+            android:text="Fish"
+            android:layout_centerHorizontal="true"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryText" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeCow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="20dp">
+
+            <ImageView
+                android:id="@+id/cow"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_cow_silhouette" />
+
+            <TextView
+                android:id="@+id/cowText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cow"
+                android:paddingTop="10dp"
+                android:text="Cow"
+                android:layout_centerHorizontal="true"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryText" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout1"
+        android:paddingTop="40dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/relativePig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="20dp">
+
+            <ImageView
+                android:id="@+id/pig"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_pig_side_view_silhouette" />
+
+            <TextView
+                android:id="@+id/pigText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pig"
+                android:paddingTop="10dp"
+                android:text="Pig"
+                android:layout_centerHorizontal="true"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryText" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeGoat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="20dp">
+
+            <ImageView
+                android:id="@+id/goat"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_aries_symbol"/>
+
+            <TextView
+                android:id="@+id/goatText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/goat"
+                android:paddingTop="10dp"
+                android:text="Goat"
+                android:layout_centerHorizontal="true"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryText" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeRabbit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="20dp">
+
+            <ImageView
+                android:id="@+id/rabbit"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_rabbit_shape" />
+
+            <TextView
+                android:id="@+id/rabbitText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rabbit"
+                android:paddingTop="10dp"
+                android:text="Pig"
+                android:layout_centerHorizontal="true"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryText" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout2"
+        android:paddingTop="30dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/relativeSheep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="20dp">
+
+            <ImageView
+                android:id="@+id/sheep"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_sheep" />
+
+            <TextView
+                android:id="@+id/sheepText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sheep"
+                android:paddingTop="10dp"
+                android:text="Sheep"
+                android:layout_centerHorizontal="true"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryText" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

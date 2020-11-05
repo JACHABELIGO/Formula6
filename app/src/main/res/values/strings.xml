@@ -13,6 +13,7 @@
     <string name="already_have_an_account_log_in_here">Already have an account? Log in here!</string>
     <string name="don_t_have_an_account_sign_up_here">Don\'t have an account? Sign up here</string>
     <string name="login">Login</string>
+    <string name="chicken">Chicken</string>
     <string-array name="UserType">
         <item>User Type</item>
         <item>Farmer</item>
