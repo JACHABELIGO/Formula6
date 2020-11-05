@@ -11,5 +11,11 @@
     <string name="project">Project</string>
     <string name="sign_up">Sign up</string>
     <string name="already_have_an_account_log_in_here">Already have an account? Log in here!</string>
-    <string name="user_type">User Type</string>
+    <string-array name="UserType">
+        <item>User Type</item>
+        <item>Farmer</item>
+        <item>Feed Miller</item>
+        <item>Adviser</item>
+
+    </string-array>
 </resources>
