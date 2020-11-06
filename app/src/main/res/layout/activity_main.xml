@@ -45,23 +45,23 @@
             android:layout_height="wrap_content"
             android:paddingEnd="20dp">
 
-        <ImageView
-            android:id="@+id/fish"
-            android:layout_width="100dp"
-            android:layout_height="70dp"
-            android:layout_centerInParent="true"
-            android:src="@drawable/ic_fish" />
+            <ImageView
+                android:id="@+id/fish"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_fish" />
 
-        <TextView
-            android:id="@+id/fishText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/fish"
-            android:paddingTop="10dp"
-            android:text="Fish"
-            android:layout_centerHorizontal="true"
-            android:textSize="15sp"
-            android:textColor="@color/colorPrimaryText" />
+            <TextView
+                android:id="@+id/fishText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fish"
+                android:paddingTop="10dp"
+                android:text="Fish"
+                android:layout_centerHorizontal="true"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryText" />
         </RelativeLayout>
 
         <RelativeLayout
