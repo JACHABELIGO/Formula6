@@ -15,11 +15,12 @@
             android:id="@+id/feedTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Poultry Feed Recipe"
+            android:text="@string/poultry_feed_recipe"
             android:paddingTop="10dp"
             android:textStyle="bold"
             android:gravity="center"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/chick"
@@ -42,7 +43,8 @@
                     android:layout_width="120dp"
                     android:layout_height="90dp"
                     android:paddingTop="20dp"
-                    android:src="@drawable/ic_chicken" />
+                    android:src="@drawable/ic_chicken"
+                    android:contentDescription="@string/chick" />
 
                 <TextView
                     android:id="@+id/chickMash"
@@ -51,7 +53,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="20dp"
                     android:paddingTop="15dp"
-                    android:text="Chick Mash (Week 1 to 2)"
+                    android:text="@string/chick_mash_week_1_to_2"
                     android:textColor="@color/colorPrimaryText"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -83,7 +85,8 @@
                     android:layout_width="120dp"
                     android:layout_height="90dp"
                     android:paddingTop="20dp"
-                    android:src="@drawable/ic_chicken" />
+                    android:src="@drawable/ic_orpington_chicken"
+                    android:contentDescription="@string/grown_chicken" />
 
                 <TextView
                     android:id="@+id/growerMash"
@@ -92,7 +95,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="15dp"
                     android:paddingTop="20dp"
-                    android:text="Grower Mash (Week 1 to 2)"
+                    android:text="@string/grower_mash_week_3_to_slaughter"
                     android:textColor="@color/colorPrimaryText"
                     android:textSize="15sp"/>
             </LinearLayout>
@@ -118,16 +121,17 @@
                     android:layout_width="120dp"
                     android:layout_height="90dp"
                     android:paddingTop="20dp"
-                    android:src="@drawable/ic_chicken" />
+                    android:src="@drawable/ic_orpington_chicken"
+                    android:contentDescription="@string/grown_chicken" />
 
                 <TextView
-                    android:id="@+id/layermash"
+                    android:id="@+id/layerMash"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="15dp"
                     android:paddingTop="20dp"
-                    android:text="Layer Mash"
+                    android:text="@string/layer_mash"
                     android:textColor="@color/colorPrimaryText"
                     android:textSize="15sp"/>
             </LinearLayout>
