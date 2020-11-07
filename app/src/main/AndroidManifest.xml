@@ -21,8 +21,7 @@
             android:name=".SignUpActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
 
-        <activity android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
