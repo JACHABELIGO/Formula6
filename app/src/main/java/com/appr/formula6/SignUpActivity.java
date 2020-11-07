@@ -3,6 +3,7 @@ package com.appr.formula6;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,6 +28,7 @@ import butterknife.ButterKnife;
 public class SignUpActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     public static final String TAG = SignUpActivity.class.getSimpleName();
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private ProgressDialog mAuthProgressDialog;
 
     @BindView(R.id.emailEditText) EditText mEmailEditText;
     @BindView(R.id.passwordEditText) EditText mPasswordEditText;
@@ -49,6 +51,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
 
         mAuth = FirebaseAuth.getInstance();
         createAuthStateListener();
+        createAuthProgressDialog();
 
         Spinner spinner = findViewById(R.id.userTypeSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.UserType, android.R.layout.simple_spinner_item);
@@ -64,6 +67,13 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
 
         mCreateUserButton.setOnClickListener(this);
         mLoginTextView.setOnClickListener(this);
+    }
+
+    private void createAuthProgressDialog() {
+        mAuthProgressDialog = new ProgressDialog(this);
+        mAuthProgressDialog.setTitle("Loading...");
+        mAuthProgressDialog.setMessage("Setting you Up...");
+        mAuthProgressDialog.setCancelable(false);
     }
 
     @Override
@@ -95,11 +105,23 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         final String email = mEmailEditText.getText().toString().trim();
         String password = mPasswordEditText.getText().toString().trim();
         String confirmPassword = mRetypePassword.getText().toString().trim();
+        final String project = mProjectEditText.getText().toString().trim();
+
+
+        boolean validEmail = isValidEmail(email);
+        boolean validName = isValidName(name);
+        boolean validPassword = isValidPassword(password, confirmPassword);
+        boolean validProject = isProject(project);
+        if (!validEmail || !validName || !validPassword || !validProject) return;
+
+        mAuthProgressDialog.show();
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        mAuthProgressDialog.dismiss();
+
                         if (task.isSuccessful()) {
                             Log.d(TAG, "Authentication successful");
                         } else {
@@ -161,7 +183,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
             mPasswordEditText.setError("Please create a password containing at least 6 characters");
             return false;
         } else if (!password.equals(confirmPassword)) {
-            mRetypePassword.setError("Passwords do not match");
+            mPasswordEditText.setError("Passwords do not match");
             return false;
         }
         return true;
