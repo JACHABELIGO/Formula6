@@ -19,12 +19,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SignUpActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     public static final String TAG = SignUpActivity.class.getSimpleName();
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
     @BindView(R.id.emailEditText) EditText mEmailEditText;
     @BindView(R.id.passwordEditText) EditText mPasswordEditText;
@@ -46,6 +48,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         ButterKnife.bind(this);
 
         mAuth = FirebaseAuth.getInstance();
+        createAuthStateListener();
 
         Spinner spinner = findViewById(R.id.userTypeSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.UserType, android.R.layout.simple_spinner_item);
@@ -105,5 +108,20 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                         }
                     }
                 });
+    }
+
+    private void createAuthStateListener() {
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                final FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        }
     }
 }
