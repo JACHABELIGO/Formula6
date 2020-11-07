@@ -1,9 +1,11 @@
 package com.appr.formula6;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,10 +13,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class SignUpActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
+    public static final String TAG = SignUpActivity.class.getSimpleName();
+
     @BindView(R.id.emailEditText) EditText mEmailEditText;
     @BindView(R.id.passwordEditText) EditText mPasswordEditText;
     @BindView(R.id.retypePassword) EditText mRetypePassword;
@@ -26,11 +37,15 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
     @BindView(R.id.createUserButton) Button mCreateUserButton;
     @BindView(R.id.loginTextView) TextView mLoginTextView;
 
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        ButterKnife.bind(this);
+
+        mAuth = FirebaseAuth.getInstance();
 
         Spinner spinner = findViewById(R.id.userTypeSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.UserType, android.R.layout.simple_spinner_item);
@@ -44,8 +59,8 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         spinner2.setAdapter((adapter2));
         spinner2.setOnItemSelectedListener(this);
 
-         mCreateUserButton.setOnClickListener(this);
-         mLoginTextView.setOnClickListener(this);
+        mCreateUserButton.setOnClickListener(this);
+        mLoginTextView.setOnClickListener(this);
     }
 
     @Override
@@ -70,5 +85,25 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         if (view == mCreateUserButton) {
             createNewUser();
         }
+    }
+
+    private void createNewUser() {
+        final String name = mNameEditText.getText().toString().trim();
+        final String email = mEmailEditText.getText().toString().trim();
+        String password = mPasswordEditText.getText().toString().trim();
+        String confirmPassword = mRetypePassword.getText().toString().trim();
+
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, "Authentication successful");
+                        } else {
+                            Toast.makeText(SignUpActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 }
