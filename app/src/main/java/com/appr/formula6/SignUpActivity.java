@@ -125,6 +125,56 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         };
     }
 
+    private boolean isValidEmail(String email) {
+        boolean isGoodEmail =
+                (email != null && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches());
+        if (!isGoodEmail) {
+            mEmailEditText.setError("Please enter a valid email address");
+            return false;
+        }
+        return isGoodEmail;
+    }
+
+    private boolean isValidPhone(String phone) {
+        if (phone.equals("")) {
+            mPhoneEditText.setError("Please enter a phone number");
+            return false;
+        } else {
+            if (phone.length() < 10) {
+                mPhoneEditText.setError("Format +254712345678");
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean isValidName(String name) {
+        if (name.equals("")) {
+            mProjectEditText.setError("Please enter a project name");
+            return false;
+        }
+        return true;
+    }
+
+    private boolean isValidPassword(String password, String confirmPassword) {
+        if (password.length() < 6) {
+            mPasswordEditText.setError("Please create a password containing at least 6 characters");
+            return false;
+        } else if (!password.equals(confirmPassword)) {
+            mRetypePassword.setError("Passwords do not match");
+            return false;
+        }
+        return true;
+    }
+
+    private boolean isProject(String project) {
+        if (project.equals("")) {
+            mNameEditText.setError("Please enter your name");
+            return false;
+        }
+        return true;
+    }
+
     @Override
     public void onStart() {
         super.onStart();
