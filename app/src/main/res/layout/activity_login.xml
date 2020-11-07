@@ -83,7 +83,7 @@
             android:textStyle="bold"
             android:textSize="13sp"
             android:text="@string/don_t_have_an_account_sign_up_here"
-            android:id="@+id/loginTextView"
+            android:id="@+id/registerTextView"
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
