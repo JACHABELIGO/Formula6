@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "420821417704",
+    "firebase_url": "https://formula6-56825.firebaseio.com",
+    "project_id": "formula6-56825",
+    "storage_bucket": "formula6-56825.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420821417704:android:270608dfc512f34926535d",
+        "android_client_info": {
+          "package_name": "com.appr.formula6"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420821417704-g1igjs57mr7fo054vq3f35ul16g1p6vj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.appr.formula6",
+            "certificate_hash": "914711b8250f089b7724257f5584b22d16c2e998"
+          }
+        },
+        {
+          "client_id": "420821417704-0baduq1oe05q9dp8maraubg7il9ptenp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZ4tpsfM7Ley2cHTSnAjJG6qQ6ylE8olE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420821417704-0baduq1oe05q9dp8maraubg7il9ptenp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

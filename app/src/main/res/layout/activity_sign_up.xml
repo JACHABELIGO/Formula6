@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SignUpActivity"
     android:background="@color/colorTextIcons">
 
@@ -31,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
+            android:inputType="textEmailAddress"
             android:hint="@string/enter_email"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
@@ -45,6 +46,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:hint="@string/password"
+            android:inputType="textPassword"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
@@ -57,6 +59,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
+            android:inputType="textPassword"
+            app:endIconMode="password_toggle"
             android:hint="@string/re_type_password"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
@@ -72,6 +76,7 @@
             android:background="@drawable/border"
             android:hint="@string/your_name"
             android:nextFocusDown="@+id/passwordEditText"
+            android:inputType="text"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
@@ -109,6 +114,7 @@
             android:background="@drawable/border"
             android:hint="@string/phone_number_with_country_code"
             android:nextFocusDown="@+id/passwordEditText"
+            android:inputType="phone"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
